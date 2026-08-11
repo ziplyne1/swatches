@@ -48,6 +48,7 @@
 		53E502B72FDFBD5A00D758BC /* Swatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swatch.swift; sourceTree = "<group>"; };
 		53E502B82FDFBD5A00D758BC /* Swatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swatches.swift; sourceTree = "<group>"; };
 		53E502B92FDFBD5A00D758BC /* UrlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlService.swift; sourceTree = "<group>"; };
+		53E502CA2FDFC31500D758BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		53EFB74F2FDD377200C6194B /* Swatches.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swatches.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53EFB75C2FDD377400C6194B /* SwatchesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwatchesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53EFB7662FDD377400C6194B /* SwatchesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwatchesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,6 +177,7 @@
 		53EFB7AF2FDD41C500C6194B /* Swatches */ = {
 			isa = PBXGroup;
 			children = (
+				53E502CA2FDFC31500D758BC /* Info.plist */,
 				53EFB7A42FDD41C500C6194B /* Resources */,
 				53EFB7AE2FDD41C500C6194B /* Sources */,
 			);
@@ -505,7 +507,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Swatches/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swatches 🛠";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -538,7 +542,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Swatches;
+				INFOPLIST_FILE = Swatches/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swatches 🛠";
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
