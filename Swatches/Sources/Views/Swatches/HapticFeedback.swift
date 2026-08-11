@@ -10,37 +10,48 @@ import SwiftUI
 struct HapticPattern: Identifiable {
     let id: String
     let feedback: SensoryFeedback
+    let producesVibration: Bool
     var trigger: Bool
     
-    init(_ id: String, _ feedback: SensoryFeedback) {
+    init(_ id: String, _ feedback: SensoryFeedback, _ producesVibration: Bool) {
         self.id = id
         self.feedback = feedback
+        self.producesVibration = producesVibration
         self.trigger = false
     }
 }
 
 struct HapticFeedback: View {
     @State private var patterns: [HapticPattern] = [
-        HapticPattern("alignment", .alignment),
-        HapticPattern("decrease", .decrease),
-        HapticPattern("error", .error),
-        HapticPattern("impact", .impact), // todo)) implement impact parameters
-        HapticPattern("increase", .increase),
-        HapticPattern("levelChange", .levelChange),
-        HapticPattern("pathComplete", .pathComplete),
-        HapticPattern("selection", .selection),
-        HapticPattern("start", .start),
-        HapticPattern("stop", .stop),
-        HapticPattern("success", .success)
+        HapticPattern("alignment", .alignment, false),
+        HapticPattern("decrease", .decrease, true),
+        HapticPattern("error", .error, true),
+        HapticPattern("impact", .impact, true), // todo)) implement impact parameters
+        HapticPattern("increase", .increase, true),
+        HapticPattern("levelChange", .levelChange, false),
+        HapticPattern("pathComplete", .pathComplete, false),
+        HapticPattern("selection", .selection, true),
+        HapticPattern("start", .start, false),
+        HapticPattern("stop", .stop, false),
+        HapticPattern("success", .success, true)
     ]
     
     var body: some View {
         List {
-            ForEach($patterns) { $pattern in
-                Button(pattern.id) {
-                    pattern.trigger.toggle()
+            Section("Patterns") {
+                ForEach($patterns) { $pattern in
+                    Button(pattern.id) {
+                        pattern.trigger.toggle()
+                    }
+                    .sensoryFeedback(pattern.feedback, trigger: pattern.trigger)
+                    .tint(pattern.producesVibration ? .accent : .red)
                 }
-                .sensoryFeedback(pattern.feedback, trigger: pattern.trigger)
+            }
+            
+            Section {
+                DisclosureGroup("Information") {
+                    Text("The patterns highlighted in red do not produce a vibration on their own with `.sensoryFeedback`. They are included for demonstration only.")
+                }
             }
         }
     }

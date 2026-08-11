@@ -22,6 +22,12 @@
     "Haptic Feedback" : {
 
     },
+    "Information" : {
+
+    },
+    "Patterns" : {
+
+    },
     "Swatches" : {
       "comment" : "Name of the app. Should probably always be 'Swatches'."
     },
@@ -29,6 +35,9 @@
 
     },
     "The available haptic patterns for the `.sensoryFeedback` modifier." : {
+
+    },
+    "The patterns highlighted in red do not produce a vibration on their own with `.sensoryFeedback`. They are included for demonstration only." : {
 
     },
     "The standard SwiftUI colors." : {
